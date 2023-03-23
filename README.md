@@ -11,3 +11,5 @@ Trabaja también con **getURLParameter** para visualizar los detalles de los eve
 A través de **VUE** se pudo lograr una reducción en la cantidad de código utilizado para lograr la web funcional. Además, se puede reducir todavía más el código si se utilizaran ternarios en lugar de ifs convencionales.
 
 En cuanto a los estilos se utilizó en su mayoría **BootstrapCSS** con algunos retoques en un archivo de estilos propio.
+
+Se puede acceder en https://agustinchoslr.github.io/AmazingEventsVUE/
