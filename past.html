@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <title>A - Pasts Events</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="d-flex flex-wrap justify-content-center py-3 border-bottom bg-body-secondary">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <img src="./assets/LogoAE.png" alt="Logotipo de la web" class="bi m-2">
+
+            </a>
+            <nav>
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./upcoming.html">Upcoming Events</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Past Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./stats.html">Stats</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <main id="app">
+        {{filtroCheck}}
+        <div class="container col-12">
+            <div class="p-2 titular d-flex justify-content-center">
+                <h1>Pasts Events</h1>
+            </div>
+
+            <form class="col-12 row row-cols-lg-auto g-3 d-flex justify-content-md-between align-items-center mt-2">
+                <!-- Category checks -->
+                <div id="category-checks" class="col-5 justify-content-lg-start">
+                    <div v-for="categoria of categorias" class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" v-bind:id="categoria" v-bind:value="categoria"
+                            v-model="checked">
+                        <label class="form-check-label" :for="categoria">{{categoria}}</label>
+                    </div>
+                </div>
+                <!-- Fin Category checks -->
+                <!-- comienzo buscador -->
+                <div class="col-3 d-flex justify-content-end">
+                    <input v-model="buscador" id="search-input" type="search" class="form-control me-2"
+                        placeholder="Search..." aria-label="Search">
+
+                    <button type="submit" class="btn btn-secondary">🔎</button>
+                </div>
+                <!-- fin Buscador -->
+        </div>
+        </form>
+        <div class="container col-12">
+            <!-- Contenedor de cards de eventos -->
+            <div id="cards-container" class="d-flex justify-content-center align-items-top mt-5 mb-5 flex-wrap">
+                <template v-if="eventosFiltrados.length !=0" v-for="evento of eventosFiltrados">
+                    <div class="m-1">
+                        <div class="card" style="width: 15rem;">
+                            <img :src="evento.image" class="card-img-top" v-bind:alt="evento.name">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <h5 class="card-title">{{evento.name}}</h5>
+                                    <p class="card-text">{{evento.description}}</p>
+                                </div>
+                                <div class="d-flex justify-content-end mt-4">
+                                    <a :href="'./details.html?id=' + evento._id"
+                                        class="btn btn-primary justify-content-end">Details</a>
+                                </div>
+                            </div>
+                </template>
+            </div>
+        </div>
+        </div>
+        </div>
+        <!-- fin cards de eventos -->
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-dark py-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <img src="./assets/insta.png" alt="Instagram">
+                <img src="./assets/face.png" alt="Facebook">
+                <img src="./assets/whatsapp.png" alt="WhatsApp">
+            </div>
+            <div class="text-light">FE08TN</div>
+        </div>
+    </footer>
+
+
+    <!-- <p id="actualizable"></p>
+    <script src="./archivo.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <!-- <script src="./assets/data.js"></script> -->
+    <!-- VUE JS script -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- fin VUE JS script -->
+    <script src="./assets/past.js"></script>
+</body>
+
+</html>

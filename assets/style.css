@@ -1,0 +1,20 @@
+header {
+    display: flex;
+}
+
+footer img{
+    width: 2em;
+    height: 2em;
+}
+
+.titular {
+    background-image: url("/assets/bannerh1.jpg") !important;
+}
+
+header>a>img {
+    width: 9rem;
+}
+
+.card-max-heigth {
+    height: 11.2rem;
+}
