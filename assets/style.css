@@ -8,7 +8,7 @@ footer img{
 }
 
 .titular {
-    background-image: url("/assets/bannerh1.jpg") !important;
+    background-image: url("./assets/bannerh1.jpg") !important;
 }
 
 header>a>img {
